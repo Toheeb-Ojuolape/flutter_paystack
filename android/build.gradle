@@ -26,7 +26,7 @@ apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 32 // Consider updating to the latest stable version
-    namespace 'co.paystack.flutterpaystack' // This should match your package in AndroidManifest.xml
+    namespace "co.paystack.flutterpaystack" // This should match your package in AndroidManifest.xml
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin' // This allows for Kotlin source files
     }
