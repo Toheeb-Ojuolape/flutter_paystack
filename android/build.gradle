@@ -2,14 +2,14 @@ group 'co.paystack.flutterpaystack'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.7.20'
+    ext.kotlin_version = '1.8.0' // Updated Kotlin version
     repositories {
         mavenCentral()
         google()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.4.0-rc02' // Consider using stable version if possible
+        classpath 'com.android.tools.build:gradle:7.3.0' // Use stable AGP version
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
@@ -25,23 +25,26 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 32 // Consider updating to the latest stable version
-    namespace "co.paystack.flutterpaystack" // This should match your package in AndroidManifest.xml
+    compileSdkVersion 32
+    namespace "co.paystack.flutterpaystack"
     sourceSets {
-        main.java.srcDirs += 'src/main/kotlin' // This allows for Kotlin source files
+        main.java.srcDirs += 'src/main/kotlin'
     }
     defaultConfig {
-        minSdkVersion 16 // Make sure this aligns with your library's requirements
-        targetSdkVersion 32 // It's good practice to specify this
+        minSdkVersion 16
+        targetSdkVersion 32
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        versionCode 21 // Consider following semantic versioning
+        versionCode 21
         versionName "3.0.10"
     }
+    kotlinOptions {
+        jvmTarget = "1.8" // Set JVM target to 1.8
+    }
     lintOptions {
-        disable 'InvalidPackage' // Ensure you understand why you're disabling this lint check
+        disable 'InvalidPackage'
     }
 }
 
 dependencies {
-    implementation 'com.google.android.material:material:1.7.0' // Consider specifying a version that suits your library's compatibility
+    implementation 'com.google.android.material:material:1.7.0'
 }
