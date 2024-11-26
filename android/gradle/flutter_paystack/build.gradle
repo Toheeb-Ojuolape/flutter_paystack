@@ -7,6 +7,10 @@ android {
     namespace 'co.paystack.flutterpaystack' // Make sure this is defined
     compileSdkVersion 33 // Ensure this is set to the latest version
 
+     kotlinOptions {
+        jvmTarget = "1.8" // Ensure it's set to a stable version like 1.8
+    }
+
     defaultConfig {
         minSdkVersion 21 // Adjust as needed
         targetSdkVersion 33 // Adjust as needed
@@ -14,9 +18,6 @@ android {
         versionName "1.0"
     }
 
-    kotlinOptions {
-        jvmTarget = "1.8" // Ensure it's set to a stable version like 1.8
-    }
 }
 
 
